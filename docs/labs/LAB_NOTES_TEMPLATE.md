@@ -1,0 +1,24 @@
+# Lab Notes Template
+
+- Day and topic:
+- Date:
+- Branch:
+- Objective:
+- Architecture change:
+- Prerequisites:
+- Estimated cost-bearing resources:
+- Commands executed:
+- Expected result:
+- Actual result:
+- Validation evidence:
+- Failure injected:
+- Symptoms:
+- Hypotheses in order:
+- Evidence gathered:
+- Root cause:
+- Fix:
+- Prevention:
+- Rollback:
+- Cleanup/shutdown:
+- Screenshot filenames:
+- AI assistance used, validation performed and corrections made:

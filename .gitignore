@@ -1,0 +1,31 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.tfvars
+!*.tfvars.example
+.aws/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Builds, IDE and OS
+target/
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Generated and temporary
+coverage/
+reports/
+.tmp/

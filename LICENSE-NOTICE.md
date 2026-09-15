@@ -1,0 +1,1 @@
+This package contains original educational documentation. Choose and add an appropriate repository license only after deciding how you want others to use the material. Product and company names belong to their respective owners.
