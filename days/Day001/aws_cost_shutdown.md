@@ -1,16 +1,14 @@
-# Day 001 AWS Cost and Shutdown Checklist
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
-Day 001 does not require provisioning a new AWS resource.
+---
 
-## Verify before ending
-- [ ] No EC2 instance was created for Day 001.
-- [ ] No EBS volume, Elastic IP, load balancer, NAT gateway, database or EKS cluster was created.
-- [ ] The shared learning EC2 instance remains only if required for the next activity.
-- [ ] The instance is stopped when not in use, if stopping is compatible with the existing ShopSphere setup.
-- [ ] Budget and billing alerts remain configured.
-- [ ] All future resources will include project, environment, owner and expiry tags.
+# 💰 AWS Cost & Shutdown Guardrail
 
-## Tagging convention for later days
+## ✅ Day 001 Cost Position
+No new EC2 instance, volume, Elastic IP, load balancer, NAT gateway, database or EKS cluster is required.
+## 🏷️ Future Tagging Standard
 ```text
 Project=FinBank-AI-DevSecOps
 Environment=lab
@@ -19,5 +17,14 @@ ManagedBy=Terraform
 CostCenter=learning
 ExpiryDate=YYYY-MM-DD
 ```
+## 🛑 End-of-Day Check
+- [ ] No accidental resource created
+- [ ] Shared EC2 retained only if needed
+- [ ] Budget alerts remain active
+- [ ] Every retained resource has owner and expiry
 
-Never stop or delete a resource solely because its name looks unfamiliar. Confirm tags, dependencies, state ownership and impact first.
+> [!IMPORTANT]
+> Never delete a resource by name alone. Confirm tags, dependencies, Terraform state ownership and impact first.
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>

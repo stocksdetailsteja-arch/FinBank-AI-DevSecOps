@@ -1,72 +1,56 @@
-# Day 001 Lab Notes
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
+---
+
+# 📝 Evidence-Driven Lab Notes
+
+## 🧭 Session Context
 - Date:
 - Engineer: Akkana Tejaswar Sai
-- Repository: FinBank-AI-DevSecOps
 - Branch:
-- Objective:
-
-## Pre-check
-- Working directory:
 - Repository root:
-- Branch:
-- Remote:
-- ShopSphere working tree status:
+- Origin:
 
-## Host baseline
-- OS:
-- Kernel:
-- CPU count:
-- Memory:
-- Root filesystem usage:
-- Important listening ports:
+## 🐧 Host Baseline
+| Signal | Observation |
+|---|---|
+| OS and kernel | |
+| CPU and memory | |
+| Filesystem | |
+| Important listeners | |
 
-## Tool inventory
-- Git:
-- AWS CLI:
-- Docker:
-- Java:
-- Maven:
-- Terraform:
-- kubectl:
+## 🧰 Toolchain Inventory
+| Tool | Version or status |
+|---|---|
+| Git | |
+| AWS CLI | |
+| Docker | |
+| Java/Maven | |
+| Terraform | |
+| kubectl | |
 
-## AWS identity validation
-Record only the role/user type and region/profile behavior. Do not record account numbers or keys.
-
-- Result:
-- aws sts get-caller-identity failed
-
-- Error:
-- Unable to locate credentials
-
-- Analysis:
-- AWS CLI is installed but credentials are not configured.
-
-- Risk:
-- No immediate security risk.
-- No resources can be modified accidentally.
-
-- Action:
-- AWS authentication will be configured during AWS Foundations phase before resource provisioning.
-
-## Failure exercise
+## 🚨 Safe Failure
 - Command:
-- Symptom:
-- Why the failure was safe:
+- Exact symptom:
 - Evidence:
-- Resolution or conclusion:
+- Root cause:
+- Why no write occurred:
+- Prevention lesson:
 
-## AI assistance record
-- Prompt purpose:
-- Context shared:
-- Sensitive data removed:
-- Output received:
-- Validation performed:
+## 🤖 AI Validation Record
+- Sanitized prompt purpose:
+- Proposed output:
+- Tests performed:
 - Defects found:
-- Final human decision:
+- Human decision:
 
-## Learning summary
-- Three concepts understood:
+## 🏁 Reflection
+- Three concepts learned:
 - Two commands to remember:
-- One production risk prevented:
+- One banking control supported:
 - One interview story:
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>

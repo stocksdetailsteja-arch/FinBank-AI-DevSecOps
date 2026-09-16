@@ -1,19 +1,17 @@
-# Day 001 Summary
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
-## Knowledge gained
-- How two repositories remain isolated on one EC2 host
-- Why Git context checks prevent cross-project mistakes
-- What belongs in a Linux engineering baseline
-- How least privilege and cost governance support banking platforms
-- Why AI-generated operations guidance requires independent validation
+---
 
-## Portfolio evidence
-- Premium Day 001 documentation package
-- Linux and toolchain baseline
-- Repository-isolation proof
-- Security scan evidence
-- Original senior interview preparation
-- Cost and shutdown record
+# 🏁 Day 001 Executive Summary
 
-## Exit criteria
-Day 001 is complete only after the feature branch is pushed, the pull request is reviewed, screenshots are stored at the exact paths, and ShopSphere is confirmed unchanged.
+## 🧠 Knowledge Gained
+Repository isolation, Git safety, Linux baselining, least privilege, cost governance and human-validated AI operations.
+## 📸 Portfolio Evidence
+Premium documentation, executable baseline, host/tool evidence, safe failure record, security checks and senior interview practice.
+## ✅ Exit Criteria
+Day 001 closes after screenshots are committed, the redesigned branch passes checks, the pull request is reviewed and ShopSphere is reconfirmed unchanged.
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>

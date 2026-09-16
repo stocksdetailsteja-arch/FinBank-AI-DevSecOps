@@ -1,6 +1,12 @@
-# Day 001 Command Reference
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
-## Repository identity
+---
+
+# 🐧 Command Center
+
+## 🧭 Repository Safety
 ```bash
 cd ~/Projects/FinBank-AI-DevSecOps
 pwd
@@ -9,15 +15,13 @@ git branch --show-current
 git remote -v
 git status --short
 ```
-
-## Confirm ShopSphere remains separate without changing it
+## 🛡️ Inspect ShopSphere Without Changing Directory
 ```bash
 git -C ~/Projects/ShopSphere rev-parse --show-toplevel
 git -C ~/Projects/ShopSphere remote -v
 git -C ~/Projects/ShopSphere status --short
 ```
-
-## Linux baseline
+## 🐧 Linux Baseline
 ```bash
 whoami
 id
@@ -32,8 +36,7 @@ ip -brief address
 ip route
 ss -lntup
 ```
-
-## Tool inventory
+## 🧰 Toolchain
 ```bash
 git --version
 aws --version
@@ -43,17 +46,12 @@ mvn -version 2>/dev/null | head -n 3 || true
 terraform version 2>/dev/null | head -n 2 || true
 kubectl version --client 2>/dev/null || true
 ```
-
-## AWS identity, do not capture account number in screenshots
+## 🔍 Quality Gate
 ```bash
-aws sts get-caller-identity
-aws configure list
-```
-
-## Safe Git review
-```bash
-git status
 git diff --check
-git diff
-git diff --cached
+git diff --cached --check
+git diff --cached --stat
 ```
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>

@@ -1,21 +1,32 @@
-# AI-Assisted DevOps Workflow
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
-## Prompt pattern
-- Role: what expertise is needed
-- Context: sanitized system facts
-- Task: one specific outcome
-- Constraints: no secrets, read-only first, target versions
-- Evidence: exact error, logs or plan excerpt
-- Output: proposed hypotheses, validation and rollback
+---
 
-## Required validation
-1. Verify every assumption.
-2. Inspect generated commands for destructive behavior and variable expansion.
-3. Run syntax checks, linters and tests.
-4. Use dry-run, plan or sandbox modes where available.
+# 🤖 Responsible AI-Assisted DevOps
+
+## 🧩 Prompt Contract
+| Element | Requirement |
+|---|---|
+| Role | State relevant expertise |
+| Context | Sanitize facts and errors |
+| Task | One specific outcome |
+| Constraints | Read-only first; no secrets |
+| Evidence | Exact safe logs or plans |
+| Output | Hypotheses, validation, rollback |
+
+## ✅ Validation Pipeline
+1. Verify assumptions.
+2. Inspect destructive behavior and variable expansion.
+3. Run syntax checks, tests and scans.
+4. Prefer dry-run or sandbox mode.
 5. Review the Git diff.
 6. Record corrections.
-7. Require human approval for privileged or production-impacting action.
+7. Require human approval for privileged action.
 
-## Day 001 exercise
-Ask an approved AI assistant to review the sanitized baseline and identify three missing signals. Do not include account IDs, IP addresses, usernames beyond what is already public, keys, tokens or confidential company data. Accept suggestions only after verifying that each proposed command is read-only.
+> [!CAUTION]
+> AI has no authority to expose data, disable controls, approve payments or execute unrestricted production remediation.
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>

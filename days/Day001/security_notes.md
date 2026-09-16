@@ -1,35 +1,33 @@
-# Day 001 Security Notes
+<p align="center">
+  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
+</p>
 
-## Secrets prohibited from Git and screenshots
-- AWS access keys and secret keys
-- Session tokens
-- Private SSH keys
-- Database passwords
-- JWT signing secrets
-- Personal or real banking data
-- Full AWS account identifiers when not required
+---
 
-## Repository controls
-- Separate repositories and remotes
-- Protected main branch when available
+# 🔐 Security Control Center
+
+## 🚫 Never Commit
+AWS keys, session tokens, private keys, passwords, JWT secrets, account identifiers, personal data or real banking information.
+
+## 🛡️ Repository Controls
+- Separate roots and remotes
+- Protected `main`
 - Pull-request review
 - Secret scanning
-- Dependency alerts
-- No direct production credentials in CI
-- Immutable evidence for important releases
+- Short-lived CI identity
+- Deliberate staged-diff review
 
-## EC2 hygiene
-- Prefer SSH keys and Systems Manager patterns over passwords.
-- Restrict security-group ingress to required sources and ports.
-- Keep packages patched through a controlled change.
-- Review listening ports and running services.
-- Do not run daily work as root.
+## 🖥️ Host Hygiene
+Restrict ingress, review listeners, patch through controlled change, avoid routine root use and prefer approved temporary access.
 
-## Day 001 threat cases
+## ⚠️ Threat Matrix
 | Asset | Threat | Control |
 |---|---|---|
-| Git history | committed secret | ignore rules, scanning, review, immediate rotation |
-| ShopSphere | accidental FinBank change | separate roots, remotes and pre-push check |
-| AWS account | overprivileged identity | role-based access and least privilege |
-| AI prompt | sensitive-data leakage | sanitization and approved assistant |
-| EC2 host | exposed service | restricted ingress and listener review |
+| Git history | Secret committed | scanning, review, rotation |
+| ShopSphere | FinBank contamination | separate roots/remotes |
+| AWS account | Overprivilege | role-based least privilege |
+| AI prompt | Data leakage | sanitization and refusal |
+| EC2 host | Exposed listener | restricted ingress and review |
+---
+
+<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
