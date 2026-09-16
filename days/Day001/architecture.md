@@ -1,28 +1,28 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
 # 🏗️ Learning Environment Architecture
 
-## 🗺️ Context Diagram
 ```mermaid
 flowchart TB
   U[Engineer] --> SSH[Secure Shell]
   SSH --> EC2[Shared Learning Host]
-  EC2 --> SS[ShopSphere Directory + .git]
-  EC2 --> FB[FinBank Directory + .git]
+  EC2 --> SS[ShopSphere Directory and Git Metadata]
+  EC2 --> FB[FinBank Directory and Git Metadata]
   SS --> SSR[(ShopSphere GitHub)]
   FB --> FBR[(FinBank GitHub)]
   FB --> CLI[AWS and DevOps CLI]
-  FB --> DOC[Docs, Labs, Evidence]
+  FB --> DOC[Documentation, Labs and Evidence]
 ```
+
 ## 🔐 Isolation Boundary
-The repositories share compute only. They do not share Git metadata, histories, remotes, application configuration or deployment targets.
+The projects share compute only. Git metadata, histories, remotes, configurations and deployment targets remain separate.
 
 > [!IMPORTANT]
-> Future FinBank resources receive separate names, tags, Terraform state and CI/CD identities. ShopSphere resources are not reused without an explicit architecture decision.
+> Future FinBank resources receive separate names, tags, state and CI/CD identities.
+
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*

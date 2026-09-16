@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
@@ -27,30 +25,25 @@
 | Git | |
 | AWS CLI | |
 | Docker | |
-| Java/Maven | |
+| Java and Maven | |
 | Terraform | |
 | kubectl | |
 
 ## 🚨 Safe Failure
 - Command:
 - Exact symptom:
-- Evidence:
 - Root cause:
 - Why no write occurred:
-- Prevention lesson:
+- Prevention:
 
 ## 🤖 AI Validation Record
-- Sanitized prompt purpose:
+- Sanitized purpose:
 - Proposed output:
-- Tests performed:
+- Tests:
 - Defects found:
 - Human decision:
 
-## 🏁 Reflection
-- Three concepts learned:
-- Two commands to remember:
-- One banking control supported:
-- One interview story:
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*

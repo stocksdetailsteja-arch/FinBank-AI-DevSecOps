@@ -1,21 +1,21 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
 # 🏦 Banking Relevance & Control Mapping
 
 ## 🔄 Controlled Change
-Separate histories and reviewed commits support traceability and reduce accidental release risk.
+Separate histories and reviewed commits support traceability.
 ## 💳 Transaction Integrity
-Future payment services require idempotency, atomic ledger rules, reconciliation and immutable events. Evidence discipline starts here.
+Future payments require idempotency, atomic ledger rules, reconciliation and immutable events.
 ## 📈 Availability
-A known-good baseline supports comparison during CPU, memory, disk, network and process incidents.
+A known-good baseline supports incident comparison.
 ## 🔐 Privacy
-Only synthetic data is permitted. Real customer records and payment data are excluded.
+Use synthetic data only. Exclude real customer and payment information.
 ## 🤖 AI Boundary
-Day 001 AI is advisory and read-only. Human approval remains mandatory for privileged or customer-impacting changes.
+AI is advisory and read-only. Human approval remains mandatory for privileged or customer-impacting change.
+
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*

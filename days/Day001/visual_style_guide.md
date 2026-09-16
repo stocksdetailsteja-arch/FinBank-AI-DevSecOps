@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
@@ -21,7 +19,9 @@
 | ✅ | passed |
 
 > [!NOTE]
-> GitHub controls the font family. Premium presentation comes from badges, symbols, hierarchy, callouts, tables, diagrams, navigation and real evidence rather than custom fonts.
+> GitHub controls the font family. Premium presentation comes from badges, hierarchy, callouts, tables, diagrams, navigation and real evidence.
+
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*

@@ -1,19 +1,15 @@
-<div align="center">
-
 # 🚀 Day 001: Engineering Baseline & Repository Safety
 
-### 🏦 FinBank AI DevSecOps • Foundation Phase • Day 1 of 120
+### 🏦 FinBank AI DevSecOps · Foundation Phase · Day 1 of 120
 
-![Status](https://img.shields.io/badge/STATUS-COMPLETED-2EA44F?style=for-the-badge&logo=githubactions&logoColor=white)
-![Phase](https://img.shields.io/badge/PHASE-FOUNDATION-1F6FEB?style=for-the-badge)
-![Linux](https://img.shields.io/badge/PLATFORM-LINUX-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![AWS](https://img.shields.io/badge/CLOUD-AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Banking](https://img.shields.io/badge/DOMAIN-BANKING-8A2BE2?style=for-the-badge)
-![AI](https://img.shields.io/badge/AI-HUMAN_VALIDATED-00A4EF?style=for-the-badge)
+![Status][badge-status]
+![Phase][badge-phase]
+![Linux][badge-linux]
+![AWS][badge-aws]
+![Banking][badge-banking]
+![AI][badge-ai]
 
 **Evidence-driven foundation for repository isolation, Linux operations, AWS safety, cost governance and responsible AI.**
-
-</div>
 
 ---
 
@@ -31,28 +27,28 @@
 | Workstream | Evidence | Status |
 |---|---|:---:|
 | Repository isolation | Separate roots and remotes | ✅ |
-| Linux baseline | OS, kernel, CPU, memory, disk | ✅ |
-| Toolchain inventory | Engineering versions recorded | ✅ |
-| AWS safety | CLI tested without exposing credentials | ✅ |
-| Security validation | Secret pattern and diff checks | ✅ |
+| Linux baseline | OS, kernel, CPU, memory and disk | ✅ |
+| Toolchain inventory | Versions recorded | ✅ |
+| AWS safety | CLI checked without exposing credentials | ✅ |
+| Security validation | Secret-pattern scan and diff check | ✅ |
 | Troubleshooting | Safe missing-remote failure | ✅ |
-| AI governance | Human validation boundary | ✅ |
+| AI governance | Human-validation boundary | ✅ |
 | Cost governance | No new cloud resource | ✅ |
 
 **Progress:** `Day 001 / 120` ▰▱▱▱▱▱▱▱▱▱
 
 > [!IMPORTANT]
-> Every FinBank command must run from `/home/ubuntu/Projects/FinBank-AI-DevSecOps`. Confirm the repository root, branch, remote and staged diff before every push.
+> Run every FinBank command from `/home/ubuntu/Projects/FinBank-AI-DevSecOps`. Verify repository root, branch, remote and staged diff before every push.
 
 ## 🏦 Banking Control Mapping
 
-| Expectation | Day 001 control | Value |
+| Expectation | Day 001 control | Engineering value |
 |---|---|---|
 | Traceability | Branch, commit and evidence | Reconstructs changes |
-| Segregation | Separate `.git` roots/remotes | Prevents contamination |
+| Segregation | Separate `.git` roots and remotes | Prevents contamination |
 | Least privilege | No long-lived AWS key | Reduces unauthorized action |
-| Audit readiness | Host and tool baseline | Repeatable evidence |
-| Data protection | Synthetic data only | Preserves confidentiality |
+| Audit readiness | Host and tool baseline | Creates repeatable evidence |
+| Data protection | Synthetic data only | Protects confidentiality |
 
 > [!CAUTION]
 > Never commit credentials, tokens, private keys, account identifiers, real customer data or real payment data.
@@ -61,35 +57,43 @@
 
 ```mermaid
 flowchart LR
-  E[👨‍💻 Engineer] --> H[☁️ Shared Learning EC2]
-  H --> S[🛍️ ShopSphere Workspace]
-  H --> F[🏦 FinBank Workspace]
+  E[Engineer] --> H[Shared Learning EC2]
+  H --> S[ShopSphere Workspace]
+  H --> F[FinBank Workspace]
   S --> SR[(ShopSphere Repository)]
   F --> FR[(FinBank Repository)]
-  F --> EV[📄 Baseline Evidence]
-  F --> AI[🤖 Human-Validated AI]
+  F --> EV[Baseline Evidence]
+  F --> AI[Human-Validated AI]
 ```
 
 ## 📸 Evidence Gallery
 
-| ID | File | Proof |
+| ID | Filename | Required proof |
 |:---:|---|---|
-| 001 | `001_Repository_Isolation_Verified.png` | Separate roots/remotes |
-| 002 | `002_Linux_Host_Baseline.png` | Host baseline |
+| 001 | `001_Repository_Isolation_Verified.png` | Separate roots and remotes |
+| 002 | `002_Linux_Host_Baseline.png` | OS, kernel, CPU, memory and disk |
 | 003 | `003_DevOps_Toolchain_Inventory.png` | Tool versions |
 | 004 | `004_Security_Validation_Passed.png` | Security checks |
 | 005 | `005_Day001_Git_Review.png` | Final Git review |
 
 ## ✅ Definition of Done
 
-- [x] Isolation verified
+- [x] Repository isolation verified
 - [x] Baselines generated
 - [x] AWS CLI behavior recorded
 - [x] Safe failure completed
-- [x] Premium documentation redesigned
+- [x] Premium package corrected
 - [ ] Screenshots committed
 - [ ] Pull request merged
 
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps</strong><br><sub>Learn deeply • Build safely • Validate everything • Document professionally</sub></p>
+**🏦 FinBank AI DevSecOps**
+*Learn deeply · Build safely · Validate everything · Document professionally*
+
+[badge-status]: https://img.shields.io/badge/STATUS-COMPLETED-2EA44F?style=for-the-badge&logo=githubactions&logoColor=white
+[badge-phase]: https://img.shields.io/badge/PHASE-FOUNDATION-1F6FEB?style=for-the-badge
+[badge-linux]: https://img.shields.io/badge/PLATFORM-LINUX-FCC624?style=for-the-badge&logo=linux&logoColor=black
+[badge-aws]: https://img.shields.io/badge/CLOUD-AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white
+[badge-banking]: https://img.shields.io/badge/DOMAIN-BANKING-8A2BE2?style=for-the-badge
+[badge-ai]: https://img.shields.io/badge/AI-HUMAN_VALIDATED-00A4EF?style=for-the-badge

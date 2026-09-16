@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
@@ -16,27 +14,22 @@
 | Cost governance | Ownership, expiry, detection and cleanup |
 | Responsible AI | Sanitized context and independently validated output |
 
-## 🔄 DevOps Is an Operating Model
-DevOps combines product ownership, software delivery and operational feedback. Tools enable the model, but the core behavior is small controlled changes, automated verification, observable outcomes, shared responsibility and rapid recovery.
+## 🔄 DevOps Operating Model
+DevOps joins product ownership, delivery and operations through small controlled changes, automated verification, observability and rapid recovery.
 
 ## 🔐 Repository Isolation
-A repository is defined by its `.git` directory. Two applications can share an EC2 host while retaining separate histories and remotes.
-
-### 🧭 Five-Point Safety Check
-1. `pwd` verifies the workspace.
-2. `git rev-parse --show-toplevel` verifies the root.
-3. `git branch --show-current` verifies the branch.
-4. `git remote -v` verifies the destination.
-5. `git diff --cached` verifies staged intent.
+A repository is defined by its `.git` directory. Verify `pwd`, repository root, branch, remote and staged diff before every commit.
 
 ## 🐧 Linux Baseline
-Capture identity, OS, kernel, CPU, memory, storage, network, processes and tool versions. A baseline enables evidence-based comparison during an incident.
+Capture identity, OS, kernel, CPU, memory, storage, network, processes and tool versions. Compare degraded behavior against this known-good state.
 
 ## 🤖 AI-Assisted Engineering
-Treat generated output as an untrusted draft. Sanitize input, state constraints, test commands, inspect diffs and require human approval for privileged or production-impacting action.
+Treat generated output as untrusted. Sanitize input, constrain scope, test commands, inspect diffs and require human approval for privileged action.
 
 > [!WARNING]
-> Never allow AI convenience to bypass least privilege, validation, rollback or auditability.
+> AI convenience never overrides least privilege, validation, rollback or auditability.
+
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*

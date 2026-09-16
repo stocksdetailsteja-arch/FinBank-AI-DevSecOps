@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="README.md">🏠 Overview</a> • <a href="concepts.md">🧠 Concepts</a> • <a href="lab_guide.md">🧪 Lab</a> • <a href="troubleshooting.md">🚨 Troubleshooting</a> • <a href="interview_questions.md">🎯 Interview</a> • <a href="screenshot_checklist.md">📸 Evidence</a>
-</p>
+[🏠 Overview](README.md) · [🧠 Concepts](concepts.md) · [🧪 Lab](lab_guide.md) · [🚨 Troubleshooting](troubleshooting.md) · [🎯 Interview](interview_questions.md) · [📸 Evidence](screenshot_checklist.md)
 
 ---
 
@@ -15,7 +13,7 @@ git branch --show-current
 git remote -v
 git status --short
 ```
-## 🛡️ Inspect ShopSphere Without Changing Directory
+## 🛡️ ShopSphere Read-Only Check
 ```bash
 git -C ~/Projects/ShopSphere rev-parse --show-toplevel
 git -C ~/Projects/ShopSphere remote -v
@@ -52,6 +50,8 @@ git diff --check
 git diff --cached --check
 git diff --cached --stat
 ```
+
 ---
 
-<p align="center"><strong>🏦 FinBank AI DevSecOps • Day 001 of 120</strong><br><sub>Learn • Build • Validate • Secure • Document • Improve</sub></p>
+**🏦 FinBank AI DevSecOps · Day 001 of 120**
+*Learn · Build · Validate · Secure · Document · Improve*
