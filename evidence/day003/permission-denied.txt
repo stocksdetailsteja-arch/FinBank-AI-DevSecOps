@@ -1,0 +1,1 @@
+cat: labs/day003/private/denied.txt: Permission denied
