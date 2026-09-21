@@ -1,0 +1,4 @@
+Sep 21 02:50:35 ip-172-31-40-230 systemd[1098]: Started finbank-day007-failure.service - [systemd-run] /bin/sh -c "echo DAY007_CONTROLLED_FAILURE; exit 42".
+Sep 21 02:50:35 ip-172-31-40-230 sh[11089]: DAY007_CONTROLLED_FAILURE
+Sep 21 02:50:35 ip-172-31-40-230 systemd[1098]: finbank-day007-failure.service: Main process exited, code=exited, status=42/n/a
+Sep 21 02:50:35 ip-172-31-40-230 systemd[1098]: finbank-day007-failure.service: Failed with result 'exit-code'.

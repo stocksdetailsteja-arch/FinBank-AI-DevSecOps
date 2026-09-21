@@ -1,0 +1,4 @@
+Id=finbank-day007-demo.service
+ActiveState=active
+SubState=running
+MainPID=10948

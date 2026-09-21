@@ -1,0 +1,11 @@
+# 🚨 Service Failure Record
+- Timestamp:
+- Unit and environment:
+- Customer impact:
+- Active/SubState and result:
+- Exit code:
+- Journal evidence:
+- Dependency/change evidence:
+- Mitigation:
+- Transaction validation:
+- Root cause and prevention:
