@@ -1,0 +1,4 @@
+transaction_id,status,amount
+TXN-001,SUCCESS,120.50
+TXN-002,FAILED,75.00
+TXN-003,SUCCESS,204.25
