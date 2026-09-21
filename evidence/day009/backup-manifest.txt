@@ -1,0 +1,5 @@
+# FINBANK DAY009 SYNTHETIC BACKUP MANIFEST
+generated_utc=2026-09-21T04:25:42Z
+source=labs/day009/source
+d79fd9e69243becd65c7b399f22a2da8be2f9ca6ad9ecea7de64c99b08decd39  labs/day009/source/audit.txt
+8b4287b9bc55c47cc8d28e5d4962bfe0900072fb332cc00c03a836a0562af6a8  labs/day009/source/reconciliation.txt
