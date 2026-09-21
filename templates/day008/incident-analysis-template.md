@@ -1,0 +1,11 @@
+# 🚨 Incident Analysis
+- Incident/time window:
+- Customer/business impact:
+- Services and dependencies:
+- Correlation identifiers:
+- Logs/metrics/traces evidence:
+- Timeline:
+- Root cause:
+- Mitigation and rollback:
+- Transaction validation:
+- Prevention actions:

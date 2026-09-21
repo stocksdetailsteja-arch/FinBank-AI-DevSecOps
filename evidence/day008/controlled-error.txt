@@ -1,0 +1,1 @@
+Sep 21 04:02:57 ip-172-31-40-230 finbank-day008[3276]: event=payment_demo_failure outcome=failed correlation_id=DAY008-20260921T040257Z data=synthetic
