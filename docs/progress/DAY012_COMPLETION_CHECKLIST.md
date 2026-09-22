@@ -1,0 +1,13 @@
+# ✅ Day 012 Completion Dashboard
+- [ ] Branch created
+- [ ] Repository safety captured
+- [ ] SSH audit complete
+- [ ] File/SUID/ACL audit complete
+- [ ] Exposure/firewall review complete
+- [ ] AppArmor/sysctl review complete
+- [ ] Three reports generated
+- [ ] Synthetic risky mode restored to 600
+- [ ] Controlled failure captured
+- [ ] Validator passed
+- [ ] Nine screenshots captured
+- [ ] PR reviewed and merged
