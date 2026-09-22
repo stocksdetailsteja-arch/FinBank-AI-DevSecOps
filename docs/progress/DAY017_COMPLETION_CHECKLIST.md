@@ -1,0 +1,11 @@
+# ✅ Day017 Completion Checklist
+- [ ] Repository verified
+- [ ] Journal baseline captured
+- [ ] Forwarding/rotation reviewed
+- [ ] Synthetic events created
+- [ ] Incident timeline generated
+- [ ] Four evidence reports
+- [ ] Fully populated lab notes
+- [ ] Deep commands and summary verified
+- [ ] Ten screenshots
+- [ ] Validator and PR complete
