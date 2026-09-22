@@ -1,0 +1,12 @@
+# 🏗️ Recovery Architecture Decision Record
+- Workload and owner:
+- Authoritative data source:
+- RPO/RTO and rationale:
+- Backup/snapshot/log strategy:
+- Failure domains:
+- Encryption/key ownership:
+- Immutability and retention:
+- Restore sequence:
+- Business reconciliation:
+- Cost/trade-offs:
+- Approval and review date:
