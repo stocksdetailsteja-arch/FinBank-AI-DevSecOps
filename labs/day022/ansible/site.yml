@@ -1,0 +1,43 @@
+---
+- name: Render synthetic FinBank training configuration
+  hosts: training
+  gather_facts: false
+  become: false
+  tags:
+    - config
+  tasks:
+    - name: Validate localhost-only safety boundary
+      ansible.builtin.assert:
+        that:
+          - inventory_hostname == "localhost"
+          - finbank_output_dir.startswith("/tmp/finbank-day022")
+        fail_msg: "Day022 safety boundary violated"
+
+    - name: Create synthetic output directory
+      ansible.builtin.file:
+        path: "{{ finbank_output_dir }}"
+        state: directory
+        mode: "0750"
+
+    - name: Render synthetic application configuration
+      ansible.builtin.template:
+        src: templates/app.conf.j2
+        dest: "{{ finbank_output_dir }}/app.conf"
+        mode: "0640"
+      notify: Record synthetic reload requirement
+
+    - name: Verify rendered configuration exists
+      ansible.builtin.stat:
+        path: "{{ finbank_output_dir }}/app.conf"
+      register: rendered_config
+
+    - name: Assert rendered configuration exists outside check mode
+      ansible.builtin.assert:
+        that:
+          - rendered_config.stat.exists
+      when: not ansible_check_mode
+
+  handlers:
+    - name: Record synthetic reload requirement
+      ansible.builtin.debug:
+        msg: "Synthetic configuration changed; production would require approved reload governance"
