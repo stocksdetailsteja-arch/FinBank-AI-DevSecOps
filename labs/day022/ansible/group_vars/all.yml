@@ -1,0 +1,7 @@
+---
+finbank_environment: training
+finbank_output_dir: /tmp/finbank-day022
+payment_timeout_ms: 3000
+payment_retry_max: 2
+audit_enabled: true
+fraud_events_enabled: true

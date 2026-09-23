@@ -1,0 +1,5 @@
+risk_id,scope,privilege,command_use,secrets,handler,rollback,owner,action
+AUTO-001,fleet,high,yes,no,restart,weak,platform,replace-command-and-canary
+AUTO-002,canary,low,no,no,reload,strong,payments,approve-with-monitoring
+AUTO-003,group,medium,no,yes,none,moderate,security,remove-secret-and-rotate
+AUTO-004,fleet,medium,no,no,restart,moderate,operations,serial-rollout
