@@ -1,0 +1,11 @@
+# ✅ Day018 Completion Checklist
+- [ ] Repository verified
+- [ ] Identity baseline captured
+- [ ] Sudo/SSH/PAM reviewed
+- [ ] File/ACL/set-ID reviewed
+- [ ] AppArmor/kernel controls reviewed
+- [ ] Four evidence reports generated
+- [ ] Lab notes fully populated
+- [ ] Commands and summary depth checked
+- [ ] Ten screenshots captured
+- [ ] Validator and PR complete
