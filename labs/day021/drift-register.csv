@@ -1,0 +1,5 @@
+drift_id,classification,exposure,asset,approved,control,owner,action
+DRIFT-001,reliability,external,tier1,no,moderate,payments,restore-and-canary
+DRIFT-002,security,internal,tier1,no,weak,security,enable-and-validate
+DRIFT-003,operational,isolated,tier3,yes,strong,platform,document-exception
+DRIFT-004,compliance,internal,tier2,no,moderate,audit,remediate-and-review
