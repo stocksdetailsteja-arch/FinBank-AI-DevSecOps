@@ -1,0 +1,2 @@
+# Patch Decision
+Purpose, inputs, controls, examples, approval, recovery, banking validation, and evidence.
