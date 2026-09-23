@@ -1,0 +1,6 @@
+finding,severity,exposure,exploit,asset,control,treatment
+SYN-001,critical,external,active,tier1,moderate,patch-and-canary
+SYN-002,high,internal,public,tier1,strong,validate-and-schedule
+SYN-003,critical,isolated,none,tier3,strong,dispute-or-accept
+SYN-004,medium,external,limited,tier2,weak,mitigate-and-patch
+SYN-005,high,internal,active,tier2,moderate,isolate-and-remediate
