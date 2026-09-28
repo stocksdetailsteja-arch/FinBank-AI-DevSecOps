@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+cmd=${1:-help}; arg=${2:-}
+case "$cmd" in
+ doctor) exec ./scripts/bootstrap/doctor.sh ;;
+ bootstrap) exec ./scripts/bootstrap/bootstrap.sh "$arg" ;;
+ build) exec ./scripts/runtime/build-all.sh ;;
+ start) exec ./scripts/runtime/start-all.sh ;;
+ status) exec ./scripts/runtime/status.sh ;;
+ test) exec ./scripts/testing/test-all.sh ;;
+ verify) exec ./scripts/validation/verify-all.sh ;;
+ stop) exec ./scripts/runtime/stop-all.sh ;;
+ reset) exec ./scripts/recovery/reset-local.sh ;;
+ backup) exec ./scripts/recovery/backup-local.sh ;;
+ restore) exec ./scripts/recovery/restore-local.sh ;;
+ help|-h|--help)
+  printf '%s\n' 'FinBank recovery interface' 'doctor' 'bootstrap [--install]' 'build' 'start' 'status' 'test' 'verify' 'stop' 'reset' 'backup' 'restore'
+  ;;
+ *) echo "Unknown command: $cmd"; exit 64 ;;
+esac

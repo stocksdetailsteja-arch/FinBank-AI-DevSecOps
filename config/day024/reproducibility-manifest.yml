@@ -1,0 +1,15 @@
+project: FinBank-AI-DevSecOps
+milestone: Day024
+os_reference: Ubuntu 26.04 LTS
+commands:
+  doctor: ./finbank doctor
+  bootstrap: ./finbank bootstrap --install
+  build: ./finbank build
+  start: ./finbank start
+  test: ./finbank test
+  verify: ./finbank verify
+  stop: ./finbank stop
+  reset: ./finbank reset
+data_mode: synthetic_in_memory
+secrets_source: external_not_in_git
+cloud_apply: explicit_only
