@@ -1,0 +1,16 @@
+On branch day-024-bootstrap-recovery-foundation
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	BACKUP_AND_RESTORE.md
+	BUILD_FROM_SCRATCH.md
+	DISASTER_RECOVERY.md
+	LOCAL_DEVELOPMENT.md
+	TOOLS_AND_VERSIONS.md
+	docs/recovery/
+	finbank
+	scripts/bootstrap/
+	scripts/recovery/
+	scripts/runtime/
+	scripts/validation/
+
+nothing added to commit but untracked files present (use "git add" to track)

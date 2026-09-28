@@ -29,3 +29,19 @@ Thumbs.db
 coverage/
 reports/
 .tmp/
+# BEGIN FINBANK RECOVERY EXCLUSIONS
+.env
+.env.local
+*.key
+*.pem
+*.p12
+*.jks
+*.pid
+*.log
+finbank-app/build/
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+backups/private/
+data/runtime/
+# END FINBANK RECOVERY EXCLUSIONS
