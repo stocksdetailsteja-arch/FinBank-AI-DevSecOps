@@ -1,0 +1,14 @@
+milestone: Day025
+base_path: /customers
+operations:
+  list:
+    method: GET
+    path: /customers
+    success_status: 200
+  get_by_id:
+    method: GET
+    path: /customers/{customerId}
+    success_status: 200
+    missing_status: 404
+data_mode: synthetic_in_memory
+security_exposure: localhost_only
