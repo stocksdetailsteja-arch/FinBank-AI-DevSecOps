@@ -1,0 +1,9 @@
+milestone: Day026
+base_path: /accounts
+operations:
+  list: { method: GET, path: /accounts, success_status: 200 }
+  get_by_id: { method: GET, path: /accounts/{accountId}, success_status: 200, missing_status: 404 }
+money_representation: integer_minor_units
+currency: INR
+data_mode: synthetic_in_memory
+security_exposure: localhost_only

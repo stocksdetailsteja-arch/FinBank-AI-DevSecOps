@@ -3,8 +3,8 @@ set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 ./scripts/validation/validate-environment.sh
 ./scripts/day023/validate-day023.sh
-./scripts/day024/generate-evidence.sh
 ./scripts/day024/validate-day024.sh
-./scripts/day025/generate-evidence.sh
 ./scripts/day025/validate-day025.sh
-echo 'PASS: Recovery Framework and Customer Service'
+./scripts/day026/generate-evidence.sh
+./scripts/day026/validate-day026.sh
+echo "PASS: Recovery Framework, Customer Service and Account Service"
