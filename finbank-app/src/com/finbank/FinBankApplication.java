@@ -7,6 +7,10 @@ public final class FinBankApplication {
 
  private static final CustomerService CUSTOMER_SERVICE =
     new CustomerService(REPO);
+
+ private static final AccountService ACCOUNT_SERVICE =
+    new AccountService(REPO);
+
  public static void main(String[] args) throws Exception {
   int port=Integer.parseInt(System.getProperty("finbank.port",System.getenv().getOrDefault("FINBANK_PORT","8080")));
   HttpServer server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),port),0);
@@ -14,7 +18,7 @@ public final class FinBankApplication {
   server.createContext("/architecture",x->send(x,200,"{\"style\":\"modular-core\",\"persistence\":\"in-memory\",\"roadmapTarget\":\"Day120\",\"domains\":[\"customer\",\"account\",\"transaction\",\"payment\"]}"));
   server.createContext("/customers",
     FinBankApplication::customers);
-  server.createContext("/accounts",x->send(x,200,Json.accounts(REPO.accounts())));
+  server.createContext("/accounts",FinBankApplication::accounts);
   server.createContext("/transactions",x->send(x,200,Json.transactions(REPO.transactions())));
   server.createContext("/payments/quote",FinBankApplication::quote);
   server.setExecutor(Executors.newFixedThreadPool(4)); server.start(); System.out.println("FinBank Day023 listening on http://127.0.0.1:"+port);
@@ -62,5 +66,57 @@ public final class FinBankApplication {
 
     send(exchange,404,
             "{\"error\":\"Customer Not Found\"}");
+}
+private static void accounts(HttpExchange exchange)
+        throws IOException {
+
+    String path = exchange.getRequestURI().getPath();
+
+    if ("/accounts".equals(path)) {
+
+        send(exchange, 200,
+                Json.accounts(
+                        ACCOUNT_SERVICE.getAccounts()));
+
+        return;
+    }
+
+    String[] segments = path.split("/");
+
+    if (segments.length == 3) {
+
+        Account account =
+                ACCOUNT_SERVICE.getAccountById(
+                        segments[2]);
+
+        if (account == null) {
+
+            send(exchange, 404,
+                    "{\"error\":\"Account Not Found\"}");
+
+            return;
+        }
+
+        send(exchange, 200,
+                "{\"accountId\":\""
+                        + account.accountId()
+                        + "\",\"customerId\":\""
+                        + account.customerId()
+                        + "\",\"type\":\""
+                        + account.type()
+                        + "\",\"balanceMinor\":"
+                        + account.balance().amountMinor()
+                        + ",\"currency\":\""
+                        + account.balance().currency()
+                        + "\",\"status\":\""
+                        + account.status()
+                        + "\"}");
+
+        return;
+    }
+
+    send(exchange,
+            404,
+            "{\"error\":\"Account Not Found\"}");
 }
 }
