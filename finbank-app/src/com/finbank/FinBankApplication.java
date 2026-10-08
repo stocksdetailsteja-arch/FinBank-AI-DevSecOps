@@ -11,6 +11,9 @@ public final class FinBankApplication {
  private static final AccountService ACCOUNT_SERVICE =
     new AccountService(REPO);
 
+ private static final TransactionService TRANSACTION_SERVICE =
+    new TransactionService(REPO);
+
  public static void main(String[] args) throws Exception {
   int port=Integer.parseInt(System.getProperty("finbank.port",System.getenv().getOrDefault("FINBANK_PORT","8080")));
   HttpServer server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),port),0);
@@ -19,7 +22,7 @@ public final class FinBankApplication {
   server.createContext("/customers",
     FinBankApplication::customers);
   server.createContext("/accounts",FinBankApplication::accounts);
-  server.createContext("/transactions",x->send(x,200,Json.transactions(REPO.transactions())));
+  server.createContext("/transactions",FinBankApplication::transactions);
   server.createContext("/payments/quote",FinBankApplication::quote);
   server.setExecutor(Executors.newFixedThreadPool(4)); server.start(); System.out.println("FinBank Day023 listening on http://127.0.0.1:"+port);
  }
@@ -118,5 +121,57 @@ private static void accounts(HttpExchange exchange)
     send(exchange,
             404,
             "{\"error\":\"Account Not Found\"}");
+}
+private static void transactions(HttpExchange exchange)
+        throws IOException {
+
+    String path = exchange.getRequestURI().getPath();
+
+    if ("/transactions".equals(path)) {
+
+        send(exchange, 200,
+                Json.transactions(
+                        TRANSACTION_SERVICE.getTransactions()));
+
+        return;
+    }
+
+    String[] segments = path.split("/");
+
+    if (segments.length == 3) {
+
+        Transaction transaction =
+                TRANSACTION_SERVICE.getTransactionById(
+                        segments[2]);
+
+        if (transaction == null) {
+
+            send(exchange, 404,
+                    "{\"error\":\"Transaction Not Found\"}");
+
+            return;
+        }
+
+        send(exchange, 200,
+                "{\"transactionId\":\""
+                        + transaction.transactionId()
+                        + "\",\"accountId\":\""
+                        + transaction.accountId()
+                        + "\",\"type\":\""
+                        + transaction.type()
+                        + "\",\"amountMinor\":"
+                        + transaction.amount().amountMinor()
+                        + ",\"currency\":\""
+                        + transaction.amount().currency()
+                        + "\",\"status\":\""
+                        + transaction.status()
+                        + "\"}");
+
+        return;
+    }
+
+    send(exchange,
+            404,
+            "{\"error\":\"Transaction Not Found\"}");
 }
 }

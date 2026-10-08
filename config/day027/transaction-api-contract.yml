@@ -1,0 +1,10 @@
+milestone: Day027
+base_path: /transactions
+operations:
+  list: { method: GET, path: /transactions, success_status: 200 }
+  get_by_id: { method: GET, path: /transactions/{transactionId}, success_status: 200, missing_status: 404 }
+money_representation: integer_minor_units
+currency: INR
+state: POSTED
+data_mode: synthetic_in_memory
+security_exposure: localhost_only
