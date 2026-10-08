@@ -1,0 +1,13 @@
+milestone: Day028
+base_path: /payments/quote
+operation:
+  method: GET
+  query: amountMinor
+  success_status: 200
+  invalid_status: 400
+money_representation: integer_minor_units
+currency: INR
+minimum_fee_minor: 100
+fee_rate: 0.005
+data_mode: deterministic_quote
+security_exposure: localhost_only

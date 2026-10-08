@@ -5,3 +5,4 @@ cd "$(git rev-parse --show-toplevel)"
 ./scripts/day025/customer-service-test.sh
 ./scripts/day026/account-service-test.sh
 ./scripts/day027/transaction-service-test.sh
+./scripts/day028/payment-service-test.sh
