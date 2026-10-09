@@ -20,6 +20,10 @@ public final class FinBankApplication {
  private static final PaymentIntentService PAYMENT_INTENT_SERVICE =
     new PaymentIntentService(REPO);
 
+ private static final PaymentAuthorizationService PAYMENT_AUTHORIZATION_SERVICE =
+    new PaymentAuthorizationService(
+            PAYMENT_INTENT_SERVICE);
+
  public static void main(String[] args) throws Exception {
   int port=Integer.parseInt(System.getProperty("finbank.port",System.getenv().getOrDefault("FINBANK_PORT","8080")));
   HttpServer server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),port),0);
@@ -278,6 +282,63 @@ private static void paymentIntents(HttpExchange exchange)
                     400,
                     "{\"error\":\""
                             + message
+                            + "\"}");
+        }
+
+        return;
+    }
+
+    String authorizationPrefix =
+            "/payment-intents/";
+
+    String authorizationSuffix =
+            "/authorize";
+
+    if ("POST".equals(method)
+            && path.startsWith(authorizationPrefix)
+            && path.endsWith(authorizationSuffix)) {
+
+        String intentId =
+                path.substring(
+                        authorizationPrefix.length(),
+                        path.length()
+                                - authorizationSuffix.length());
+
+        if (intentId.isBlank()
+                || intentId.contains("/")) {
+
+            send(exchange,
+                    404,
+                    "{\"error\":\"Payment Intent Not Found\"}");
+
+            return;
+        }
+
+        try {
+
+            PaymentIntent authorized =
+                    PAYMENT_AUTHORIZATION_SERVICE.authorize(
+                            intentId);
+
+            if (authorized == null) {
+
+                send(exchange,
+                        404,
+                        "{\"error\":\"Payment Intent Not Found\"}");
+
+                return;
+            }
+
+            send(exchange,
+                    200,
+                    paymentIntentJson(authorized));
+
+        } catch (IllegalStateException exception) {
+
+            send(exchange,
+                    409,
+                    "{\"error\":\""
+                            + exception.getMessage()
                             + "\"}");
         }
 

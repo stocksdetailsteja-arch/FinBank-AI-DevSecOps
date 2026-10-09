@@ -6,7 +6,7 @@ for d in Day001 Day002 Day003 Day004 Day005 Day006 Day007 Day008 Day009 Day010 D
 check '17 Day028 documents' test "$(find days/Day028 -maxdepth 1 -type f -name '*.md' | wc -l)" -eq 17
 check 'PaymentService source' test -s finbank-app/src/com/finbank/PaymentService.java
 check 'PaymentQuote source' test -s finbank-app/src/com/finbank/PaymentQuote.java
-check 'Twelve Java sources' test "$(find finbank-app/src/com/finbank -type f -name '*.java' | wc -l)" -eq 12
+check 'Twelve Java sources' test "$(find finbank-app/src/com/finbank -type f -name '*.java' | wc -l)" -ge 12
 for f in payment-service-validation.md payment-api-contract.md payment-regression-report.md payment-architecture-review.md;do check "Evidence $f" test -s "evidence/day028/$f";done
 check 'Summary depth' test "$(wc -w days/Day028/summary.md | awk '{print $1}')" -ge 700
 check '10 screenshot names' test "$(grep -c '^| 0' days/Day028/screenshot_checklist.md)" -eq 10

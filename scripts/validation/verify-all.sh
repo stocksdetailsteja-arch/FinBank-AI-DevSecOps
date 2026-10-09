@@ -8,6 +8,7 @@ cd "$(git rev-parse --show-toplevel)"
 ./scripts/day026/validate-day026.sh
 ./scripts/day027/validate-day027.sh
 ./scripts/day028/validate-day028.sh
-./scripts/day029/generate-evidence.sh
 ./scripts/day029/validate-day029.sh
-echo "PASS: Recovery and Payment Intent Foundation"
+./scripts/day030/generate-evidence.sh
+./scripts/day030/validate-day030.sh
+echo "PASS: Recovery and Payment Authorization Foundation"

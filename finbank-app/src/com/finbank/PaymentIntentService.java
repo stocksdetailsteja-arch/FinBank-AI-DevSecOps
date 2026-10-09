@@ -62,4 +62,26 @@ public final class PaymentIntentService {
             throw new IllegalArgumentException("account not found");
         }
     }
+public synchronized void replace(PaymentIntent updated) {
+
+    Objects.requireNonNull(
+            updated,
+            "updated");
+
+    for (int index = 0;
+            index < intents.size();
+            index++) {
+
+        if (intents.get(index)
+                .intentId()
+                .equals(updated.intentId())) {
+
+            intents.set(index, updated);
+            return;
+        }
+    }
+
+    throw new IllegalArgumentException(
+            "payment intent not found");
+}
 }

@@ -1,0 +1,10 @@
+milestone: Day030
+path: /payment-intents/{intentId}/authorize
+method: POST
+success_status: 200
+missing_status: 404
+conflict_status: 409
+allowed_transition: CREATED_TO_AUTHORIZED
+persistence: in_memory
+ledger_effect: none
+security_exposure: localhost_only
