@@ -17,6 +17,9 @@ public final class FinBankApplication {
  private static final PaymentService PAYMENT_SERVICE =
     new PaymentService();
 
+ private static final PaymentIntentService PAYMENT_INTENT_SERVICE =
+    new PaymentIntentService(REPO);
+
  public static void main(String[] args) throws Exception {
   int port=Integer.parseInt(System.getProperty("finbank.port",System.getenv().getOrDefault("FINBANK_PORT","8080")));
   HttpServer server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),port),0);
@@ -27,6 +30,8 @@ public final class FinBankApplication {
   server.createContext("/accounts",FinBankApplication::accounts);
   server.createContext("/transactions",FinBankApplication::transactions);
   server.createContext("/payments/quote",FinBankApplication::quote);
+  server.createContext("/payment-intents",
+    FinBankApplication::paymentIntents);
   server.setExecutor(Executors.newFixedThreadPool(4)); server.start(); System.out.println("FinBank Day023 listening on http://127.0.0.1:"+port);
  }
  private static void quote(HttpExchange exchange)
@@ -212,5 +217,147 @@ private static void transactions(HttpExchange exchange)
     send(exchange,
             404,
             "{\"error\":\"Transaction Not Found\"}");
+}
+private static void paymentIntents(HttpExchange exchange)
+        throws IOException {
+
+    String method = exchange.getRequestMethod();
+    String path = exchange.getRequestURI().getPath();
+
+    if ("GET".equals(method)
+            && "/payment-intents".equals(path)) {
+
+        send(exchange,
+                200,
+                paymentIntentsJson(
+                        PAYMENT_INTENT_SERVICE
+                                .getPaymentIntents()));
+
+        return;
+    }
+
+    if ("POST".equals(method)
+            && "/payment-intents".equals(path)) {
+
+        Map<String, String> values =
+                query(exchange.getRequestURI()
+                        .getRawQuery());
+
+        try {
+
+            String sourceAccountId =
+                    values.get("sourceAccountId");
+
+            String destinationAccountId =
+                    values.get("destinationAccountId");
+
+            long amountMinor =
+                    Long.parseLong(
+                            values.getOrDefault(
+                                    "amountMinor",
+                                    "0"));
+
+            PaymentIntent intent =
+                    PAYMENT_INTENT_SERVICE.create(
+                            sourceAccountId,
+                            destinationAccountId,
+                            amountMinor);
+
+            send(exchange,
+                    201,
+                    paymentIntentJson(intent));
+
+        } catch (Exception exception) {
+
+            String message =
+                    exception.getMessage() == null
+                            ? "Invalid payment intent request"
+                            : exception.getMessage();
+
+            send(exchange,
+                    400,
+                    "{\"error\":\""
+                            + message
+                            + "\"}");
+        }
+
+        return;
+    }
+
+    String prefix = "/payment-intents/";
+
+    if ("GET".equals(method)
+            && path.startsWith(prefix)
+            && path.length() > prefix.length()
+            && path.indexOf('/',
+                    prefix.length()) < 0) {
+
+        String intentId =
+                path.substring(prefix.length());
+
+        PaymentIntent intent =
+                PAYMENT_INTENT_SERVICE
+                        .getPaymentIntentById(
+                                intentId);
+
+        if (intent == null) {
+
+            send(exchange,
+                    404,
+                    "{\"error\":\"Payment Intent Not Found\"}");
+
+            return;
+        }
+
+        send(exchange,
+                200,
+                paymentIntentJson(intent));
+
+        return;
+    }
+
+    send(exchange,
+            404,
+            "{\"error\":\"Payment Intent Not Found\"}");
+}
+
+private static String paymentIntentJson(
+        PaymentIntent intent) {
+
+    return "{\"intentId\":\""
+            + intent.intentId()
+            + "\",\"sourceAccountId\":\""
+            + intent.sourceAccountId()
+            + "\",\"destinationAccountId\":\""
+            + intent.destinationAccountId()
+            + "\",\"amountMinor\":"
+            + intent.amountMinor()
+            + ",\"currency\":\""
+            + intent.currency()
+            + "\",\"status\":\""
+            + intent.status()
+            + "\"}";
+}
+
+private static String paymentIntentsJson(
+        List<PaymentIntent> intents) {
+
+    StringBuilder json =
+            new StringBuilder("[");
+
+    for (int index = 0;
+            index < intents.size();
+            index++) {
+
+        if (index > 0) {
+            json.append(",");
+        }
+
+        json.append(
+                paymentIntentJson(
+                        intents.get(index)));
+    }
+
+    return json.append("]").toString();
 }
 }
