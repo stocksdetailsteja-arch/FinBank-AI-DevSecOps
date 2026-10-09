@@ -1,0 +1,12 @@
+milestone: Day029
+base_path: /payment-intents
+operations:
+  list: { method: GET, path: /payment-intents, success_status: 200 }
+  get: { method: GET, path: /payment-intents/{intentId}, success_status: 200, missing_status: 404 }
+  create: { method: POST, path: /payment-intents, success_status: 201, invalid_status: 400 }
+state: CREATED
+money_representation: integer_minor_units
+currency: INR
+persistence: in_memory
+idempotency: future_required
+security_exposure: localhost_only
